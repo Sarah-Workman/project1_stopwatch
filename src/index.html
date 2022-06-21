@@ -1,23 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Stopwatch</title>
-  <meta name="description" content="A simple stopwatch application">
-  <meta name="author" content="Sarah Workman">
+		<title>Stopwatch</title>
+		<meta name="description" content="A simple stopwatch application" />
+		<meta name="author" content="Sarah Workman" />
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <link rel="stylesheet" href="./css/styles.css">
+		<link rel="stylesheet" href="./css/styles.css" />
+	</head>
 
-  <script src="./scripts/scripts.js"></script>
-</head>
+	<body>
+		<!-- your content here... -->
+		<div class="stopwatchWrapper">
+			<div class="buttonWrapper">
+				<button type="button" id="start">START</button>
+				<button type="button" id="pause">PAUSE</button>
+				<button type="button" id="stop">STOP</button>
+			</div>
 
-<body>
-  <!-- your content here... -->
-</body>
+			<div class="rectangle">
+				<p id="stopwatchText">00:00:00</p>
+			</div>
+		</div>
+
+		<script src="./scripts/scripts.js"></script>
+	</body>
 </html>
