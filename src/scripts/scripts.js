@@ -1,3 +1,7 @@
+let seconds = null;
+let minutes = null;
+let hours = null;
+
 let outputseconds;
 let outputminutes;
 let outputhours;
@@ -12,20 +16,20 @@ function start() {
 	//interval
 	startTimer = setInterval(function () {
 		seconds++;
-		if (seconds < 09) {
+		if (seconds < 9) {
 			outputseconds = 0 + seconds;
 			document.getElementById("seconds").innerHTML = outputseconds;
-		} else if (seconds < 99) {
+		} else if (seconds < 60) {
 			outputseconds = seconds;
 			document.getElementById("seconds").innerHTML = outputseconds;
-		} else if (seconds > 99) {
+		} else if (seconds > 60) {
 			minutes++;
 			outputminutes = 0 + minutes;
 			document.getElementById("minutes").innerHTML = outputminutes;
 		} else if (minutes > 9) {
 			outputminutes = minutes;
 			document.getElementById("minutes").innerHTML = outputminutes;
-		} else if (minutes > 99) {
+		} else if (minutes > 60) {
 			hours++;
 			outputhours = 0 + hours;
 			document.getElementById("hours").innerHTML = outputhours;
