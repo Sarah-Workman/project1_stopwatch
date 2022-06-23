@@ -16,17 +16,20 @@ function start() {
 	//interval
 	startTimer = setInterval(function () {
 		seconds++;
-		if (seconds < 9) {
-			outputseconds = 0 + seconds;
+		if (seconds <= 9) {
+			outputseconds = "0" + seconds;
 			document.getElementById("seconds").innerHTML = outputseconds;
-		} else if (seconds < 60) {
+		} else if (seconds <= 60) {
 			outputseconds = seconds;
 			document.getElementById("seconds").innerHTML = outputseconds;
-		} else if (seconds > 60) {
+		} else if (seconds >= 60) {
 			minutes++;
-			outputminutes = 0 + minutes;
+			outputseconds = "00";
+			outputminutes = "0" + minutes;
+			document.getElementById("seconds").innerHTML = outputseconds;
 			document.getElementById("minutes").innerHTML = outputminutes;
-		} else if (minutes > 9) {
+			seconds = 0;
+		} else if (minutes >= 9) {
 			outputminutes = minutes;
 			document.getElementById("minutes").innerHTML = outputminutes;
 		} else if (minutes > 60) {
