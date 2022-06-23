@@ -1,11 +1,15 @@
 .stopwatchWrapper {
 	margin-left: 40%;
-	margin-top: 15%;
+	margin-top: 10%;
+	border: 2px solid black;
+	border-radius: 8px;
+	padding: 5px;
+	width: 18%;
 }
 
 .rectangle {
-	margin-left: 74px;
-	margin-top: 120px;
+	margin-left: 90px;
+	margin-top: 70px;
 	z-index: 2;
 	height: 60px;
 	width: 110px;
@@ -19,6 +23,7 @@
 }
 .buttonWrapper {
 	z-index: 2;
+	margin-left: 10%;
 }
 #start {
 	background-color: green;
