@@ -29,7 +29,7 @@
 	display: inline-block;
 	font-size: 20px;
 }
-#pause {
+#stop {
 	background-color: orange;
 	border: none;
 	color: white;
@@ -38,7 +38,7 @@
 	display: inline-block;
 	font-size: 20px;
 }
-#stop {
+#reset {
 	background-color: red;
 	border: none;
 	color: white;

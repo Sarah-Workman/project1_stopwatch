@@ -8,8 +8,8 @@ let outputhours;
 
 //connection to button
 document.getElementById("start").addEventListener("click", start);
-document.getElementById("pause").addEventListener("click", pause);
 document.getElementById("stop").addEventListener("click", stop);
+document.getElementById("reset").addEventListener("click", reset);
 
 //functions
 function start() {
@@ -46,5 +46,16 @@ function start() {
 	}, 1000);
 } //end of start function
 
-function pause() {}
-function stop() {}
+function stop() {
+	clearInterval(startTimer);
+}
+function reset() {
+	clearInterval(startTimer);
+	document.getElementById("seconds").innerHTML = "00";
+	document.getElementById("minutes").innerHTML = "00";
+	document.getElementById("hours").innerHTML = "00";
+
+	seconds = 0;
+	minutes = 0;
+	hours = 0;
+}
