@@ -1,6 +1,3 @@
-let seconds = document.getElementById("seconds");
-let minutes = document.getElementById("minutes");
-let hours = document.getElementById("hours");
 let outputseconds;
 let outputminutes;
 let outputhours;
@@ -16,7 +13,7 @@ function start() {
 	startTimer = setInterval(function () {
 		seconds++;
 		if (seconds < 09) {
-			outputseconds = "0" + seconds;
+			outputseconds = 0 + seconds;
 			document.getElementById("seconds").innerHTML = outputseconds;
 		} else if (seconds < 99) {
 			outputseconds = seconds;
@@ -34,7 +31,7 @@ function start() {
 			document.getElementById("hours").innerHTML = outputhours;
 		} else if (hours > 9) {
 			outputhours = hours;
-			document.getElementById("hours").innderHTML = outputhours;
+			document.getElementById("hours").innerHTML = outputhours;
 		}
 	}, 1000);
 } //end of start function
