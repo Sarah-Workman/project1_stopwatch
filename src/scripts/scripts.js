@@ -32,10 +32,13 @@ function start() {
 		} else if (minutes >= 9) {
 			outputminutes = minutes;
 			document.getElementById("minutes").innerHTML = outputminutes;
-		} else if (minutes > 60) {
+		} else if (minutes >= 60) {
 			hours++;
-			outputhours = 0 + hours;
+			outputminutes = "00";
+			outputhours = "0" + hours;
+			document.getElementById("minutes").innerHTML = outputminutes;
 			document.getElementById("hours").innerHTML = outputhours;
+			minutes = 0;
 		} else if (hours > 9) {
 			outputhours = hours;
 			document.getElementById("hours").innerHTML = outputhours;
