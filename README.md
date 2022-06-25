@@ -1,8 +1,8 @@
 ## Simple Stopwatch app
 
-### Three button functionality
+### Three button functionality<br>
 
-##Start, Stop, and Reset.
+###Start, Stop, and Reset.
 Start will start a function that counts based on seconds. Stop will hold your timers place on the screen. Reset will clear all and end interval. 
 
 Here are some common markdown samples:
