@@ -1,7 +1,7 @@
-## Stopwatch app
+## Simple Stopwatch app
 
-### Markdown Examples
-This is a markdown file used to tell people about your application, how to use it, etc. (google markdown for different things you can do with markdown)
+### Three button functionality
+start, stop, and reset. Start will start a function that counts based on seconds. Stop will hold your timers place on the screen. Reset will clear all and end interval. 
 
 Here are some common markdown samples:
 
