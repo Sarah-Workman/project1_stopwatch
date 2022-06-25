@@ -1,4 +1,4 @@
-## Simple Stopwatch app
+## Simple Stopwatch App
 
 ### Three button functionality
 #### Start, Stop, and Reset.
