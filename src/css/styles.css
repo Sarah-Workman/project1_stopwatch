@@ -1,6 +1,7 @@
 .stopwatchWrapper {
-	margin-left: 40%;
-	margin-top: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border: 2px solid black;
 	border-radius: 8px;
 	padding: 5px;
@@ -56,14 +57,4 @@
 	display: inline-block;
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
-}
-@media (min-width: 700px) and (max-width: 1000px) {
-	.rectangle {
-		margin-left: 20px;
-		margin-top: 70px;
-		z-index: 2;
-		height: 50px;
-		width: 110px;
-		background-color: rgb(92, 91, 91);
-	}
 }
