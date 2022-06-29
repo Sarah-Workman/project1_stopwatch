@@ -1,46 +1,48 @@
-.stopwatchWrapper {
+body {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-content: center;
+}
+.stopwatchWrapper {
+	display: grid;
+	grid-template-columns: 33.33% 33.33% 33.33%;
+	grid-template-rows: 33.33% 33.33% 33.33%;
 	border: 2px solid black;
 	border-radius: 8px;
-	padding: 5px;
-	width: 18%;
+	width: 50%;
 }
 
 .rectangle {
+	grid-row-start: 3;
+	grid-column-start: 2;
 	display: flex;
-	justify-self: center;
-	align-items: flex-end;
+	justify-content: center;
+	align-content: flex-end;
 	z-index: 2;
-	height: 80px;
-	width: 160px;
 	background-color: rgb(92, 91, 91);
 }
 #textWrapper {
-	padding-top: 18%;
 	color: white;
-	text-align: center;
-	vertical-align: middle;
+	justify-self: center;
+	align-self: center;
 	font-size: larger;
 	font-family: Arial, Helvetica, sans-serif;
 }
-.buttonWrapper {
-	display: flex;
-	justify-content: center;
-	align-content: flex-start;
-}
+
 #start {
+	grid-row-start: 1;
+	grid-column-start: 1;
 	background-color: green;
 	border: none;
 	color: white;
 	text-align: center;
 	text-decoration: none;
-
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 #stop {
+	grid-column-start: 2;
+	grid-row-start: 1;
 	background-color: orange;
 	border: none;
 	color: white;
@@ -51,6 +53,8 @@
 	font-family: Arial, Helvetica, sans-serif;
 }
 #reset {
+	grid-column-start: 3;
+	grid-row-start: 1;
 	background-color: red;
 	border: none;
 	color: white;
