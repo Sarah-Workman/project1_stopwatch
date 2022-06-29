@@ -9,8 +9,9 @@
 }
 
 .rectangle {
-	margin-left: 65px;
-	margin-top: 70px;
+	display: flex;
+	justify-self: center;
+	align-items: flex-end;
 	z-index: 2;
 	height: 80px;
 	width: 160px;
@@ -25,8 +26,9 @@
 	font-family: Arial, Helvetica, sans-serif;
 }
 .buttonWrapper {
-	z-index: 2;
-	margin-left: 10%;
+	display: flex;
+	justify-content: center;
+	align-content: flex-start;
 }
 #start {
 	background-color: green;
@@ -34,7 +36,7 @@
 	color: white;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
+
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -44,7 +46,7 @@
 	color: white;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
+
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -54,7 +56,7 @@
 	color: white;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
+
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
