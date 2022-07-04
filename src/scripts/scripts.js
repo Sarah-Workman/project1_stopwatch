@@ -49,8 +49,6 @@ function start() {
 			}
 		}, 1000); //end of interval
 	} // end of if check
-	else {
-	}
 } //end of start function
 
 function stop() {
