@@ -7,6 +7,6 @@ Start will start a function that counts based on seconds. Stop will hold your pl
 Flex combined with grid layout make the stopwatch dynamic to any screen size. 
 
 
-![](simpleStopwatch.png)
+![](stopWatch.png)
 
 
