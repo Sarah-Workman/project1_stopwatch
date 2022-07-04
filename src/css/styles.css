@@ -3,24 +3,37 @@ body {
 	justify-content: center;
 	align-content: center;
 }
-.stopwatchWrapper {
-	display: grid;
-	grid-template-columns: 33.33% 33.33% 33.33%;
-	grid-template-rows: 33.33% 33.33% 33.33%;
+
+.stopwatch-wrapper {
 	border: 2px solid black;
 	border-radius: 8px;
 	width: 50%;
+	padding: 1em;
+}
+
+.stopwatch-button-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
+}
+
+.rectangle-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .rectangle {
-	grid-row-start: 3;
-	grid-column-start: 2;
 	display: flex;
 	justify-content: center;
 	align-content: flex-end;
-	z-index: 2;
 	background-color: rgb(92, 91, 91);
+	margin-top: 1em;
+	height: 2em;
+	width: fit-content;
+	padding: 1em;
 }
+
 #textWrapper {
 	color: white;
 	justify-self: center;
@@ -40,6 +53,7 @@ body {
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
 #stop {
 	grid-column-start: 2;
 	grid-row-start: 1;
@@ -52,6 +66,7 @@ body {
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
 #reset {
 	grid-column-start: 3;
 	grid-row-start: 1;
