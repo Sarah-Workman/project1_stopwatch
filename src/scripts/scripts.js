@@ -2,6 +2,7 @@ let seconds = null;
 let minutes = null;
 let hours = null;
 let startTimer = null;
+let time = null;
 let statusCheck = 0;
 let outputseconds;
 let outputminutes;
@@ -11,6 +12,7 @@ let outputhours;
 document.getElementById("start").addEventListener("click", start);
 document.getElementById("stop").addEventListener("click", stop);
 document.getElementById("reset").addEventListener("click", reset);
+document.getElementById("lap").addEventListener("click", lap);
 
 //functions
 function start() {
@@ -49,12 +51,30 @@ function start() {
 			}
 		}, 1000); //end of interval
 	} // end of if check
+
+	//nested if check
+	let startTime = "00";
+
+	if (outputseconds > 0) {
+		if (outputminutes > 0) {
+			if (outputhours > 0) {
+				return outputhours + ":" + outputminutes + ":" + outputseconds;
+			} else {
+				return startTime + ":" + outputminutes + ":" + outputseconds;
+			} // hours
+		} else {
+			return startTime + ":" + startTime + ":" + outputseconds;
+		} //minutes
+	} else {
+		return startTime + ":" + startTime + ":" + startTime;
+	} // end of nested if seconds
 } //end of start function
 
 function stop() {
 	clearInterval(startTimer);
 	statusCheck = 0;
 }
+
 function reset() {
 	clearInterval(startTimer);
 	document.getElementById("seconds").innerHTML = "00";
@@ -66,4 +86,10 @@ function reset() {
 	hours = 0;
 
 	statusCheck = 0;
+}
+
+function lap() {
+	statusCheck = 1;
+	let lapTime = start();
+	document.getElementById("lap-text").innerHTML = lapTime;
 }
