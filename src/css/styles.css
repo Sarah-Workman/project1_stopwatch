@@ -83,7 +83,7 @@ body {
 }
 
 #lap {
-	grid-column-start: 2;
+	grid-column-start: 1;
 	grid-row-start: 2;
 	background-color: blue;
 	border: none;
@@ -117,4 +117,15 @@ body {
 #lap-text5 {
 	grid-column-start: 2;
 	grid-row-start: 5;
+}
+#resetLaps {
+	grid-column-start: 3;
+	grid-row-start: 2;
+	background-color: firebrick;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
 }

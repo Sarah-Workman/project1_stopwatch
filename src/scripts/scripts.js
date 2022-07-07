@@ -8,11 +8,19 @@ let outputseconds;
 let outputminutes;
 let outputhours;
 
+//connection to paragraph elements
+const lap1 = document.getElementById("lap-text1");
+const lap2 = document.getElementById("lap-text2");
+const lap3 = document.getElementById("lap-text3");
+const lap4 = document.getElementById("lap-text4");
+const lap5 = document.getElementById("lap-text5");
+
 //connection to button
 document.getElementById("start").addEventListener("click", start);
 document.getElementById("stop").addEventListener("click", stop);
 document.getElementById("reset").addEventListener("click", reset);
 document.getElementById("lap").addEventListener("click", lap);
+document.getElementById("resetLaps").addEventListener("click", resetLaps);
 
 //functions
 function start() {
@@ -90,11 +98,6 @@ function reset() {
 
 function lap() {
 	statusCheck = 1;
-	const lap1 = document.getElementById("lap-text1");
-	const lap2 = document.getElementById("lap-text2");
-	const lap3 = document.getElementById("lap-text3");
-	const lap4 = document.getElementById("lap-text4");
-	const lap5 = document.getElementById("lap-text5");
 
 	let lapTime = start();
 
@@ -103,7 +106,6 @@ function lap() {
 			if (lap3.textContent.includes("00")) {
 				if (lap4.textContent.includes("00")) {
 					if (lap5.textContent.includes("00")) {
-						// may put a function for limit that allows a reset.
 					} else {
 						document.getElementById("lap-text5").innerHTML = lapTime;
 					} // end of lap 5 condition
@@ -120,3 +122,11 @@ function lap() {
 		document.getElementById("lap-text1").innerHTML = lapTime;
 	} //end of lap 1 condition
 } //end of lap function
+
+function resetLaps() {
+	document.getElementById("lap-text1").innerHTML = "";
+	document.getElementById("lap-text2").innerHTML = "";
+	document.getElementById("lap-text3").innerHTML = "";
+	document.getElementById("lap-text4").innerHTML = "";
+	document.getElementById("lap-text5").innerHTML = "";
+}
