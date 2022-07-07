@@ -95,10 +95,26 @@ body {
 }
 .lap-container {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(1, 1fr);
 	gap: 1em;
 }
-#lap-text {
+#lap-text1 {
 	grid-column-start: 2;
 	grid-row-start: 1;
+}
+#lap-text2 {
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
+#lap-text3 {
+	grid-column-start: 2;
+	grid-row-start: 3;
+}
+#lap-text4 {
+	grid-column-start: 2;
+	grid-row-start: 4;
+}
+#lap-text5 {
+	grid-column-start: 2;
+	grid-row-start: 5;
 }
