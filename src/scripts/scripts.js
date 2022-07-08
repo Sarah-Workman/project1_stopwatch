@@ -8,13 +8,6 @@ let outputseconds;
 let outputminutes;
 let outputhours;
 
-//connection to paragraph elements
-const lap1 = document.getElementById("lap-text1");
-const lap2 = document.getElementById("lap-text2");
-const lap3 = document.getElementById("lap-text3");
-const lap4 = document.getElementById("lap-text4");
-const lap5 = document.getElementById("lap-text5");
-
 //connection to button
 document.getElementById("start").addEventListener("click", start);
 document.getElementById("stop").addEventListener("click", stop);
@@ -98,35 +91,18 @@ function reset() {
 
 function lap() {
 	statusCheck = 1;
-
+	//initialize time
 	let lapTime = start();
 
-	if (lap1.textContent.includes("00")) {
-		if (lap2.textContent.includes("00")) {
-			if (lap3.textContent.includes("00")) {
-				if (lap4.textContent.includes("00")) {
-					if (lap5.textContent.includes("00")) {
-					} else {
-						document.getElementById("lap-text5").innerHTML = lapTime;
-					} // end of lap 5 condition
-				} else {
-					document.getElementById("lap-text4").innerHTML = lapTime;
-				} // end of lap 4 condition
-			} else {
-				document.getElementById("lap-text3").innerHTML = lapTime;
-			} //end of lap 3 condition
-		} else {
-			document.getElementById("lap-text2").innerHTML = lapTime;
-		} //end of lap 2 condition
-	} else {
-		document.getElementById("lap-text1").innerHTML = lapTime;
-	} //end of lap 1 condition
-} //end of lap function
+	//create connection to div
+	let lapContainer = document.getElementById("lapContainer");
+
+	//create element
+	const para = document.createElement("p");
+	para.innerText = lapTime;
+	lapContainer.appendChild(para);
+}
 
 function resetLaps() {
-	document.getElementById("lap-text1").innerHTML = "";
-	document.getElementById("lap-text2").innerHTML = "";
-	document.getElementById("lap-text3").innerHTML = "";
-	document.getElementById("lap-text4").innerHTML = "";
-	document.getElementById("lap-text5").innerHTML = "";
+	document.getElementsByTagName("p").innerHTML = "";
 }

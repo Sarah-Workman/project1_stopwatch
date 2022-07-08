@@ -47,7 +47,7 @@ body {
 #start {
 	grid-row-start: 1;
 	grid-column-start: 1;
-	background-color: green;
+	background-color: #4caf50;
 	border: none;
 	color: white;
 	text-align: center;
@@ -59,12 +59,11 @@ body {
 #stop {
 	grid-column-start: 2;
 	grid-row-start: 1;
-	background-color: orange;
+	background-color: #4caf50;
 	border: none;
 	color: white;
 	text-align: center;
 	text-decoration: none;
-
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -72,12 +71,11 @@ body {
 #reset {
 	grid-column-start: 3;
 	grid-row-start: 1;
-	background-color: red;
+	background-color: #4caf50;
 	border: none;
 	color: white;
 	text-align: center;
 	text-decoration: none;
-
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -85,7 +83,18 @@ body {
 #lap {
 	grid-column-start: 1;
 	grid-row-start: 2;
-	background-color: blue;
+	background-color: #4caf50;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#resetLaps {
+	grid-column-start: 3;
+	grid-row-start: 2;
+	background-color: #4caf50;
 	border: none;
 	color: white;
 	text-align: center;
@@ -96,36 +105,16 @@ body {
 .lap-container {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
-	gap: 1em;
+	margin-top: 3em;
 }
-#lap-text1 {
-	grid-column-start: 2;
-	grid-row-start: 1;
-}
-#lap-text2 {
-	grid-column-start: 2;
-	grid-row-start: 2;
-}
-#lap-text3 {
-	grid-column-start: 2;
-	grid-row-start: 3;
-}
-#lap-text4 {
-	grid-column-start: 2;
-	grid-row-start: 4;
-}
-#lap-text5 {
-	grid-column-start: 2;
-	grid-row-start: 5;
-}
-#resetLaps {
-	grid-column-start: 3;
-	grid-row-start: 2;
-	background-color: firebrick;
-	border: none;
+
+#lapContainer p {
+	background-color: rgb(132, 130, 130);
 	color: white;
 	text-align: center;
-	text-decoration: none;
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
+	padding-left: 13em;
+	padding-right: 13em;
+	margin: 0em;
 }
