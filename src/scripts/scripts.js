@@ -104,5 +104,5 @@ function lap() {
 }
 
 function resetLaps() {
-	document.getElementsByTagName("p").innerHTML = "";
+	$(lapContainer).empty();
 }
