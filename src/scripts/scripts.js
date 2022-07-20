@@ -1,4 +1,4 @@
-let seconds = null;
+let seconds = 0;
 let minutes = null;
 let hours = null;
 let startTimer = null;
@@ -7,6 +7,9 @@ let statusCheck = 0;
 let outputseconds;
 let outputminutes;
 let outputhours;
+let timerOutputHours;
+let timerOutputMinutes;
+let timerOutputSeconds;
 
 //connection to button
 document.getElementById("start").addEventListener("click", start);
@@ -105,4 +108,5 @@ function lap() {
 
 function resetLaps() {
 	$(lapContainer).empty();
+	statusCheck = 0;
 }

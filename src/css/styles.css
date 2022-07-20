@@ -1,11 +1,19 @@
-body {
+* {
+	box-sizing: border-box;
+}
+
+.lineBreak {
+	width: 100%;
+}
+#main {
 	display: flex;
+	position: relative;
 	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+	align-content: center;
 }
 
 .stopwatch-wrapper {
+	justify-self: center;
 	flex-grow: 2;
 	border: 2px solid black;
 	border-radius: 8px;
@@ -18,15 +26,35 @@ body {
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1em;
 }
+.timer-button-container {
+	width: 100%;
+	display: flex;
+	padding: 1em;
+	justify-content: center;
+	align-content: flex-end;
+}
+.timer-button-container button {
+	text-decoration: none;
+	border: none;
+	color: white;
+	font-size: 70px;
+	width: fit-content;
+	margin-right: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .rectangle-container {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 }
-
-.rectangle {
+.timer-container {
+	width: 100%;
 	display: flex;
+	justify-content: center;
+}
+.rectangle {
 	justify-content: center;
 	align-content: flex-end;
 	background-color: rgb(92, 91, 91);
@@ -34,6 +62,17 @@ body {
 	height: 2em;
 	width: fit-content;
 	padding: 1em;
+}
+.timer-rectangle {
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background-color: rgb(92, 91, 91);
+	margin-top: 1em;
+	height: max-content;
+	width: max-content;
+	padding: 3em;
 }
 
 #textWrapper {
@@ -43,11 +82,20 @@ body {
 	font-size: larger;
 	font-family: Arial, Helvetica, sans-serif;
 }
+#timerTextWrapper {
+	z-index: 0;
+	color: white;
+	justify-self: center;
+	align-self: center;
+	font-size: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+}
 
 #start {
 	grid-row-start: 1;
 	grid-column-start: 1;
 	background-color: #4caf50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	border: none;
 	color: white;
 	text-align: center;
@@ -60,6 +108,7 @@ body {
 	grid-column-start: 2;
 	grid-row-start: 1;
 	background-color: #4caf50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	border: none;
 	color: white;
 	text-align: center;
@@ -72,6 +121,7 @@ body {
 	grid-column-start: 3;
 	grid-row-start: 1;
 	background-color: #4caf50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	border: none;
 	color: white;
 	text-align: center;
@@ -84,6 +134,7 @@ body {
 	grid-column-start: 1;
 	grid-row-start: 2;
 	background-color: #4caf50;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	border: none;
 	color: white;
 	text-align: center;
@@ -103,9 +154,10 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 .lap-container {
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	margin-top: 3em;
+	display: flex;
+	flex-direction: column;
+	margin-top: 2em;
+	align-self: center;
 }
 
 #lapContainer p {
@@ -117,4 +169,182 @@ body {
 	padding-left: 13em;
 	padding-right: 13em;
 	margin: 0em;
+}
+.menu {
+	align-self: flex-start;
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	align-items: flex-start;
+	padding: 0.5em;
+}
+#timer {
+	text-decoration: none;
+	background-color: rgb(132, 130, 130);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.5em;
+}
+#alarm {
+	text-decoration: none;
+	background-color: rgb(132, 130, 130);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.5em;
+}
+#stopwatch {
+	text-decoration: none;
+	background-color: rgb(132, 130, 130);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.5em;
+}
+
+#startTimer {
+	justify-self: center;
+	text-decoration: none;
+	background-color: rgb(132, 130, 130);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.5em;
+}
+#pauseTimer {
+	justify-self: center;
+	text-decoration: none;
+	background-color: rgb(132, 130, 130);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.5em;
+}
+#addTimer {
+	z-index: 1;
+	position: absolute;
+	border-radius: 50%;
+	text-decoration: none;
+	border: none;
+	background-color: blue;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.5em;
+}
+#resetTimer {
+	justify-self: center;
+	text-decoration: none;
+	background-color: rgb(132, 130, 130);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0.5em;
+}
+#timerTextWrapper span {
+	color: white;
+	font-size: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#inputHours::placeholder {
+	color: white;
+	font-size: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: right;
+}
+#inputMinutes::placeholder {
+	color: white;
+	font-size: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+#inputSeconds::placeholder {
+	color: white;
+	font-size: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+}
+#inputHours {
+	background-color: rgb(92, 91, 91);
+	color: white;
+	font-size: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	text-align: right;
+	text-decoration: none;
+}
+#inputMinutes {
+	background-color: rgb(92, 91, 91);
+	color: white;
+	font-size: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	text-align: center;
+	text-decoration: none;
+}
+#inputSeconds {
+	background-color: rgb(92, 91, 91);
+	color: white;
+	font-size: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	text-align: left;
+	text-decoration: none;
+}
+#timerFormSec {
+	position: absolute;
+	z-index: 3;
+	display: none;
+}
+#timerForm {
+	display: flex;
+	flex-direction: column;
+	background-color: grey;
+	opacity: 85%;
+}
+#formBtn {
+	margin-left: 15em;
+	margin-right: 15em;
+	margin-bottom: 1em;
+	margin-top: 2em;
+	color: white;
+	text-decoration: none;
+	background-color: rgb(92, 91, 91);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#timerInput {
+	margin-left: 2em;
+	margin-right: 2em;
+}
+h3 {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+::placeholder {
+	font-size: larger;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+#timerInputBoxs {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-top: 2em;
 }

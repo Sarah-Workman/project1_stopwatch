@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>Timmer</title>
+		<meta name="description" content="A simple timmer" />
+		<meta name="author" content="Sarah Workman" />
+
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<link rel="stylesheet" href="./css/styles.css" />
+	</head>
+	<body>
+		<div class="menu">
+			<a href="index.html" id="stopwatch">Stopwatch</a>
+			<a href="alarm.html" id="alarm">Alarm</a>
+		</div>
+
+
+			<div class="lineBreak"></div>
+			<div class="timer-container">
+				<button type="button" id="addTimer"><img src="imgs/plus.png" /></button>
+
+				<div class="timer-rectangle">
+					<p id="timerTextWrapper">
+						<span id="inputHours">00</span>:<span id="inputMinutes">00</span
+						>:<span id="inputSeconds" value="">00</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<div id="timerFormSec">
+				<form id="timerForm" method="get" )>
+					<h3>Start Timer:</h3>
+					<div id="timerInputBoxs">
+						<input
+							type="number"
+							id="timerHours"
+							name="timerHours"
+							placeholder="Hours"
+						/>
+
+						<input
+							type="number"
+							id="timerMinutes"
+							name="timerMinutes"
+							placeholder="Minutes"
+						/>
+
+						<input
+							type="number"
+							id="timerSeconds"
+							name="timerSeconds"
+							placeholder="Seconds"
+						/>
+					</div>
+					<button type="button" id="formBtn" >SUBMIT</button>
+				</form>
+			</div>
+		<div class="timer-button-container">
+			<button type="submit" id="startTimer">
+				<img src="imgs/play.png" />
+			</button>
+			<button type="button" id="pauseTimer">
+				<img src="imgs/pause.png" />
+			</button>
+			<button type="button" id="resetTimer">
+				<img src="imgs/restart.png" />
+			</button>
+		</div>
+	</div>
+		<script src="./scripts/scriptTimer.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</body>
+</html>
