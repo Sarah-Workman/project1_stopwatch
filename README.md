@@ -15,6 +15,6 @@ Flex combined with grid layout make the stopwatch dynamic to any screen size.
 
 ![](stopWatch.png)
 ![](timer.png)
-![](timeradd.png){width: 50%}
+![](timeradd.png)
 
 
