@@ -1,6 +1,6 @@
 ## Simple Stopwatch App. Timer and Alarm pending..
 
-## Stop Watch
+## Stopwatch
 ### Five button functionality
 
 * Start - Start will start a function that counts based on seconds.
