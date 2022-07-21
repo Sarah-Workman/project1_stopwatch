@@ -1,4 +1,4 @@
-## Simple Stopwatch App
+## Simple Stopwatch and timer app. Alarm pending..
 
 ### Five button functionality
 
