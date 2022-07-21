@@ -1,5 +1,6 @@
 ## Simple Stopwatch App. Timer and Alarm pending..
 
+## Stop Watch
 ### Five button functionality
 
 * Start - Start will start a function that counts based on seconds.
@@ -14,6 +15,9 @@ Flex combined with grid layout make the stopwatch dynamic to any screen size.
 
 
 ![](stopWatch.png)
+
+## Timer
+
 ![](timer.png)
 ![](timeradd.png)
 
