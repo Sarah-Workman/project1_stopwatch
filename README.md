@@ -1,4 +1,4 @@
-## Simple Stopwatch and Timer app. Alarm pending..
+## Simple Stopwatch App. Timer and Alarm pending..
 
 ### Five button functionality
 
@@ -14,5 +14,6 @@ Flex combined with grid layout make the stopwatch dynamic to any screen size.
 
 
 ![](stopWatch.png)
+![](timer.png)
 
 
