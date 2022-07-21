@@ -1,6 +1,6 @@
-let seconds;
-let minutes;
-let hours;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
 let startTimer;
 let time;
 let statusCheck = 0;
@@ -33,39 +33,28 @@ document.getElementById("formBtn").addEventListener("click", function () {
 		//interval
 		timerInterval = setInterval(function () {
 			if (seconds < 60 && seconds > 0) {
+				document.getElementById("inputSeconds").innerHTML = seconds;
 				seconds--;
-				// put seconds on screen with 0 place holder
-				outputseconds = seconds;
-				document.getElementById("inputSeconds").innerHTML = outputseconds;
 
-				// static minutes and hours
+				document.getElementById("inputSeconds").innerHTML = seconds;
 				document.getElementById("inputMinutes").innerHTML = minutes;
 				document.getElementById("inputHours").innerHTML = hours;
-			} //check to see if minute is over
-			else if (minutes < 60 && minutes > 0) {
-				minutes--;
-
-				if (seconds === 0) {
-					seconds = 59;
-					outputminutes = minutes;
-
-					document.getElementById("inputMinutes").innerHTML = outputminutes;
+				if (seconds === 0 && minutes === 0 && hours === 0) {
+					seconds = "00";
+					minutes = "00";
+					hours = "00";
 					document.getElementById("inputSeconds").innerHTML = seconds;
-
-					// to check if the hour is over
+					document.getElementById("inputMinutes").innerHTML = minutes;
+					document.getElementById("inputHours").innerHTML = hours;
 				}
+			} else if (minutes < 60 && minutes > 0) {
+				document.getElementById("inputMinutes").innerHTML = minutes;
+				minutes--;
+				seconds = 59;
 			} else if (hours < 60 && hours > 0) {
+				document.getElementById("inputHours").innerHTML = hours;
 				hours--;
-
-				if (minutes === 0) {
-					minutes = 59;
-					outputhours = hours;
-					outputminutes = minutes;
-					outputseconds = seconds;
-					document.getElementById("inputhours").innerHTML = outputhours;
-					document.getElementById("inputMinutes").innerHTML = outputseconds;
-					document.getElementById("inputSeconds").innerHTML = outputseconds;
-				}
+				minutes = 59;
 			}
 
 			//redex to see if two digits?
