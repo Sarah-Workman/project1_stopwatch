@@ -1,7 +1,7 @@
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
-let startTimer;
+let timerInterval = null;
 let time;
 let statusCheck = 0;
 let outputseconds;
@@ -60,4 +60,13 @@ document.getElementById("formBtn").addEventListener("click", function () {
 			//redex to see if two digits?
 		}, 1000); //empty function
 	} //end of first if check
+}); //end of function
+
+document.getElementById("startTimer").addEventListener(click, function () {}); //end of function
+
+document.getElementById("pauseTimer").addEventListener(click, function () {
+	clearInterval(timerInterval);
+	document.getElementById("inputSeconds").innerHTML = seconds;
+	document.getElementById("inputMinutes").innerHTML = minutes;
+	document.getElementById("inputHours").innderHTML = hours;
 }); //end of function
