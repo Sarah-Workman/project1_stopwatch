@@ -17,6 +17,12 @@ Flex combined with grid layout make the stopwatch dynamic to any screen size.
 ![](stopWatch.png)
 
 ## Timer
+### Four button functionality
+
+* plus icon - shows hidden form that takes the values of hours, minutes, and seconds.  Upon click of submit button form is hidden, and timer starts passing values to timer screen. 
+* play icon - stops the interval and starts a new interval with the current value. 
+* pause icon - stops the interval and keeps current value on timer screen. 
+* reset icon - stops the interval and resets timer screen to start position.
 
 ![](timer.png)
 ![](timeradd.png)
