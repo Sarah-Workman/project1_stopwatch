@@ -32,14 +32,17 @@ function hide() {
 	$(hide).css("display", "none");
 }
 
-//starts the main timer function
+//starts the main timer function. Opposite of the stopwatch using the passed value as the starting point for countdown.
 function start() {
-	// the start of the main timer function. I planned on doing the opposite of the stopwatch using the passed value as the starting point for countdown.
 	if (statusCheck === 0) {
 		statusCheck = 1;
 		let seclength = seconds.toString.length;
 		let minlength = minutes.toString.length;
 		let hourlength = hours.toString.length;
+
+		let zeroDig = 0;
+		let oneDig = 1;
+		let twoDig = 2;
 
 		//interval
 		timerInterval = setInterval(function () {
@@ -64,6 +67,8 @@ function start() {
 
 			//redex to see if two digits?
 		}, 1000); //empty function
+
+		// return values to pass to pause timer
 		outputhours = hours;
 		outputminutes = minutes;
 		outputseconds = seconds;
@@ -92,4 +97,4 @@ document.getElementById("resetTimer").addEventListener("click", function () {
 	document.getElementById("inputSeconds").innerHTML = startTimer;
 	document.getElementById("inputMinutes").innerHTML = startTimer;
 	document.getElementById("inputHours").innerHTML = startTimer;
-});
+}); //end of function
