@@ -15,6 +15,7 @@ Flex combined with grid layout make the stopwatch dynamic to any screen size.
 
 
 ![](stopWatch.png)
+![](stopwatchlap.png)
 
 ## Timer
 ### Four button functionality
