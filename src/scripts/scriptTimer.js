@@ -69,9 +69,7 @@ function start() {
 		}, 1000); //empty function
 
 		// return values to pass to pause timer
-		outputhours = hours;
-		outputminutes = minutes;
-		outputseconds = seconds;
+
 		return hours + minutes + seconds;
 	} //end of first if check
 } //end of function

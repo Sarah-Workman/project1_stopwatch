@@ -3,13 +3,11 @@ let minutes = null;
 let hours = null;
 let startTimer = null;
 let time = null;
+let isRunning = Boolean(false);
 let statusCheck = 0;
 let outputseconds;
 let outputminutes;
 let outputhours;
-let timerOutputHours;
-let timerOutputMinutes;
-let timerOutputSeconds;
 
 //connection to button
 document.getElementById("start").addEventListener("click", start);
@@ -20,8 +18,9 @@ document.getElementById("resetLaps").addEventListener("click", resetLaps);
 
 //functions
 function start() {
-	if (statusCheck === 0) {
-		statusCheck = 1;
+	if (isRunning === false) {
+		isRunning = true;
+
 		//interval
 		startTimer = setInterval(function () {
 			seconds++;
@@ -76,7 +75,7 @@ function start() {
 
 function stop() {
 	clearInterval(startTimer);
-	statusCheck = 0;
+	isRunning = false;
 }
 
 function reset() {
@@ -89,24 +88,25 @@ function reset() {
 	minutes = 0;
 	hours = 0;
 
-	statusCheck = 0;
+	isRunning = false;
 }
 
 function lap() {
-	statusCheck = 1;
-	//initialize time
-	let lapTime = start();
+	if (isRunning === true) {
+		//initialize time
+		let lapTime = start();
 
-	//create connection to div
-	let lapContainer = document.getElementById("lapContainer");
+		//create connection to div
+		let lapContainer = document.getElementById("lapContainer");
 
-	//create element
-	const para = document.createElement("p");
-	para.innerText = lapTime;
-	lapContainer.appendChild(para);
+		//create element
+		const para = document.createElement("p");
+		para.innerText = lapTime;
+		lapContainer.appendChild(para);
+	}
 }
 
 function resetLaps() {
 	$(lapContainer).empty();
-	statusCheck = 0;
+	isRunning = false;
 }
