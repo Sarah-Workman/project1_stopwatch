@@ -4,7 +4,8 @@ let hours = null;
 let startTimer = null;
 let time = null;
 let isRunning = Boolean(false);
-let statusCheck = 0;
+
+let x;
 let outputseconds;
 let outputminutes;
 let outputhours;
@@ -94,15 +95,29 @@ function reset() {
 function lap() {
 	if (isRunning === true) {
 		//initialize time
-		let lapTime = start();
-
+		let lapTime = [start()];
 		//create connection to div
 		let lapContainer = document.getElementById("lapContainer");
+		// how to check if they equal each other
 
 		//create element
 		const para = document.createElement("p");
-		para.innerText = lapTime;
-		lapContainer.appendChild(para);
+
+		//how many laps have been created
+		let i = document.getElementById("lapContainer").childElementCount;
+		let index = [i];
+		//create an index that will add an id to paragraph
+		para.id = index;
+
+		let lastItem = lapTime[lapTime.length - 1];
+		let currentItem = lapTime[lapTime.length];
+
+		if (index[lastItem] != index[currentItem]) {
+			//add the lap to text
+			para.innerText = lapTime;
+
+			lapContainer.appendChild(para);
+		}
 	}
 }
 
