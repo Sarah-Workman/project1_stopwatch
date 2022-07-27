@@ -5,6 +5,7 @@ let startTimer = null;
 let time = null;
 let isRunning = Boolean(false);
 
+let lapContainer = [];
 let x;
 let outputseconds;
 let outputminutes;
@@ -95,9 +96,9 @@ function reset() {
 function lap() {
 	if (isRunning === true) {
 		//initialize time
-		let lapTime = [start()];
+		let lapTime = start();
 		//create connection to div
-		let lapContainer = document.getElementById("lapContainer");
+		lapContainer = document.getElementById("lapContainer");
 		// how to check if they equal each other
 
 		//create element
@@ -109,13 +110,18 @@ function lap() {
 		//create an index that will add an id to paragraph
 		para.id = index;
 
-		let lastItem = lapTime[lapTime.length - 1];
-		let currentItem = lapTime[lapTime.length];
+		//add the lap to text
+		para.innerText = lapTime;
+		let laps = [];
 
-		if (index[lastItem] != index[currentItem]) {
-			//add the lap to text
-			para.innerText = lapTime;
+		laps = Array.from(document.getElementById("lapContainer").childNodes).map(
+			(node) => node.textContent
+		);
 
+		let lastItem = laps[laps.length - 1];
+		let currentItem = lapTime;
+
+		if (currentItem !== lastItem) {
 			lapContainer.appendChild(para);
 		}
 	}
