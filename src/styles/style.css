@@ -1,0 +1,538 @@
+.lineBreak {
+  width: 100%;
+}
+
+#main {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+}
+
+.stopwatch-container {
+  margin: auto;
+  width: 50%;
+}
+
+.alarm-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(92, 91, 91);
+  width: 100%;
+  border-bottom: black;
+}
+
+.stopwatch-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #defff2;
+  border-radius: 8px;
+  width: 100%;
+  padding: 1em;
+}
+
+.stopwatch-button-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.timer-button-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  justify-content: center;
+  align-content: flex-end;
+  background-color: #0ff4c6;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.timer-button-container button {
+  text-decoration: none;
+  border: none;
+  color: white;
+  font-size: 70px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 1em;
+  margin-left: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rectangle-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rectangle {
+  justify-content: center;
+  align-content: flex-end;
+  background-color: rgb(92, 91, 91);
+  margin-top: 1em;
+  height: 2em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1em;
+}
+
+.timer-rectangle {
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(92, 91, 91);
+  margin-top: 1em;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 3em;
+}
+
+#textWrapper {
+  color: white;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#timerTextWrapper {
+  z-index: 0;
+  color: white;
+  justify-self: center;
+  align-self: center;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#start {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  background-color: #0ff4c6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#stop {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  background-color: #0ff4c6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#reset {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  background-color: #0ff4c6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#lap {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background-color: #0ff4c6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#resetLaps {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  background-color: #0ff4c6;
+  border: none;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lap-container {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  align-self: center;
+  padding-left: 2em;
+}
+
+#lapContainer p {
+  background-color: rgb(132, 130, 130);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 13em;
+  padding-right: 13em;
+  margin: 0em;
+}
+
+.rectangle p {
+  margin: 0;
+  padding-top: 0.5em;
+}
+
+.menu {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: flex-start;
+  padding: 0.5em;
+}
+
+#timer {
+  text-decoration: none;
+  background-color: rgb(132, 130, 130);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+}
+
+#alarm {
+  text-decoration: none;
+  background-color: rgb(132, 130, 130);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+}
+
+#stopwatch {
+  text-decoration: none;
+  background-color: rgb(132, 130, 130);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+}
+
+#startTimer {
+  justify-self: center;
+  text-decoration: none;
+  background-color: #464f51;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+}
+
+#pauseTimer {
+  justify-self: center;
+  text-decoration: none;
+  background-color: #464f51;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+}
+
+#addTimer {
+  z-index: 1;
+  position: absolute;
+  border-radius: 50%;
+  text-decoration: none;
+  border: none;
+  background-color: #defff2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+}
+
+#resetTimer {
+  justify-self: center;
+  text-decoration: none;
+  background-color: #464f51;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+}
+
+#timerTextWrapper span {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#inputHours::-moz-placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+#inputHours:-ms-input-placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+#inputHours::placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+#inputMinutes::-moz-placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#inputMinutes:-ms-input-placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#inputMinutes::placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#inputSeconds::-moz-placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+#inputSeconds:-ms-input-placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+#inputSeconds::placeholder {
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+#inputHours {
+  background-color: rgb(92, 91, 91);
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+  text-decoration: none;
+}
+
+#inputMinutes {
+  background-color: rgb(92, 91, 91);
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+}
+
+#inputSeconds {
+  background-color: rgb(92, 91, 91);
+  color: white;
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  text-decoration: none;
+}
+
+#timerFormSec {
+  position: absolute;
+  z-index: 3;
+  display: none;
+}
+
+#timerForm {
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  opacity: 85%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#formBtn {
+  margin-left: 15em;
+  margin-right: 15em;
+  margin-bottom: 1em;
+  margin-top: 2em;
+  color: white;
+  border: none;
+  text-decoration: none;
+  background-color: rgb(92, 91, 91);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#timerInput {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+h3 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-moz-placeholder {
+  font-size: larger;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  font-size: larger;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+::placeholder {
+  font-size: larger;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#timerInputBoxs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 2em;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #0ff4c6;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #0ff4c6;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.current-timer-wrapper {
+  background-color: rgb(92, 91, 91);
+  display: flex;
+  justify-content: center;
+}
+
+#timeText {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(92, 91, 91);
+  color: white;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+}/*# sourceMappingURL=style.css.map */
