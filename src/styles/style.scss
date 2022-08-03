@@ -1,11 +1,38 @@
+$shadows: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$fontStyle: Arial, Helvetica, sans-serif;
+@mixin flex {
+	justify-content: center;
+	align-content: center;
+	display: flex;
+}
+@mixin stopwatchBtns {
+	background-color: #0ff4c6;
+	box-shadow: $shadows;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	font-family: $fontStyle;
+}
+@mixin menuBtn {
+	text-decoration: none;
+	background-color: rgb(132, 130, 130);
+
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-family: $fontStyle;
+	padding: 0.5em;
+}
+
 .lineBreak {
 	width: 100%;
 }
 #main {
-	display: flex;
-	position: relative;
-	justify-content: center;
-	align-content: center;
+	@include flex();
+	flex-direction: column;
+	align-items: center;
 }
 .stopwatch-container {
 	margin: auto;
@@ -21,14 +48,13 @@
 }
 
 .stopwatch-wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@include flex();
 	background-color: #defff2;
 
 	border-radius: 8px;
 	width: 100%;
 	padding: 1em;
+	flex-direction: column;
 }
 
 .stopwatch-button-container {
@@ -47,31 +73,29 @@
 	justify-content: center;
 	align-content: flex-end;
 	background-color: #0ff4c6;
-	font-family: Arial, Helvetica, sans-serif;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.timer-button-container button {
-	text-decoration: none;
-	border: none;
-	color: white;
+	font-family: $fontStyle;
+	box-shadow: $shadows;
+	button {
+		text-decoration: none;
+		border: none;
+		color: white;
 
-	font-size: 70px;
-	width: fit-content;
-	margin-right: 1em;
-	margin-left: 1em;
-	font-family: Arial, Helvetica, sans-serif;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		font-size: 70px;
+		width: fit-content;
+		margin-right: 1em;
+		margin-left: 1em;
+		font-family: $fontStyle;
+		box-shadow: $shadows;
+	}
 }
 
 .rectangle-container {
+	@include flex();
 	width: 100%;
-	display: flex;
-	justify-content: center;
 }
 .timer-container {
+	@include flex();
 	width: 100%;
-	display: flex;
-	justify-content: center;
 }
 .rectangle {
 	justify-content: center;
@@ -83,10 +107,9 @@
 	padding: 1em;
 }
 .timer-rectangle {
+	@include flex();
+
 	z-index: 0;
-	display: flex;
-	justify-content: center;
-	align-content: center;
 	background-color: rgb(92, 91, 91);
 	margin-top: 1em;
 	height: max-content;
@@ -98,87 +121,54 @@
 	color: white;
 
 	font-size: larger;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 }
 #timerTextWrapper {
+	@include flex();
+
 	z-index: 0;
 	color: white;
-	justify-self: center;
-	align-self: center;
 	font-size: 70px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 }
 
 #start {
+	@include stopwatchBtns();
 	grid-row-start: 1;
 	grid-column-start: 1;
-	background-color: #0ff4c6;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border: none;
-	color: white;
-	text-align: center;
-	text-decoration: none;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
 }
 
 #stop {
+	@include stopwatchBtns();
 	grid-column-start: 2;
 	grid-row-start: 1;
-	background-color: #0ff4c6;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border: none;
-	color: white;
-	text-align: center;
-	text-decoration: none;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
 }
 
 #reset {
+	@include stopwatchBtns();
 	grid-column-start: 3;
 	grid-row-start: 1;
-	background-color: #0ff4c6;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border: none;
-	color: white;
-	text-align: center;
-	text-decoration: none;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
 }
 
 #lap {
+	@include stopwatchBtns();
 	grid-column-start: 1;
 	grid-row-start: 2;
-	background-color: #0ff4c6;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border: none;
-	color: white;
-	text-align: center;
-	text-decoration: none;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
 }
 #resetLaps {
+	@include stopwatchBtns();
 	grid-column-start: 3;
 	grid-row-start: 2;
-	background-color: #0ff4c6;
-	border: none;
-	color: white;
-	text-align: center;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	text-decoration: none;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
 }
 .lap-container {
+	@include flex();
+
 	margin: auto;
 	width: 50%;
-	display: flex;
+
 	flex-direction: column;
 	margin-top: 2em;
-	align-self: center;
+
 	padding-left: 2em;
 }
 
@@ -187,7 +177,7 @@
 	color: white;
 	text-align: center;
 	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	padding-left: 13em;
 	padding-right: 13em;
 	margin: 0em;
@@ -205,56 +195,35 @@
 	padding: 0.5em;
 }
 #timer {
-	text-decoration: none;
-	background-color: rgb(132, 130, 130);
-
-	color: white;
-	text-align: center;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 0.5em;
+	@include menuBtn();
 }
 #alarm {
-	text-decoration: none;
-	background-color: rgb(132, 130, 130);
-
-	color: white;
-	text-align: center;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 0.5em;
+	@include menuBtn();
 }
 #stopwatch {
-	text-decoration: none;
-	background-color: rgb(132, 130, 130);
-
-	color: white;
-	text-align: center;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 0.5em;
+	@include menuBtn();
 }
 
 #startTimer {
 	justify-self: center;
 	text-decoration: none;
 	background-color: #464f51;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: $shadows;
 	color: white;
 	text-align: center;
 	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	padding: 0.5em;
 }
 #pauseTimer {
 	justify-self: center;
 	text-decoration: none;
 	background-color: #464f51;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: $shadows;
 	color: white;
 	text-align: center;
 	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	padding: 0.5em;
 }
 #addTimer {
@@ -264,51 +233,51 @@
 	text-decoration: none;
 	border: none;
 	background-color: #defff2;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: $shadows;
 	text-align: center;
 	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	padding: 0.5em;
 }
 #resetTimer {
 	justify-self: center;
 	text-decoration: none;
 	background-color: #464f51;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: $shadows;
 	color: white;
 	text-align: center;
 	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	padding: 0.5em;
 }
 #timerTextWrapper span {
 	color: white;
 	font-size: 70px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 }
 #inputHours::placeholder {
 	color: white;
 	font-size: 70px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	text-align: right;
 }
 #inputMinutes::placeholder {
 	color: white;
 	font-size: 70px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	text-align: center;
 }
 #inputSeconds::placeholder {
 	color: white;
 	font-size: 70px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	text-align: left;
 }
 #inputHours {
 	background-color: rgb(92, 91, 91);
 	color: white;
 	font-size: 70px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 
 	text-align: right;
 	text-decoration: none;
@@ -317,7 +286,7 @@
 	background-color: rgb(92, 91, 91);
 	color: white;
 	font-size: 70px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 
 	text-align: center;
 	text-decoration: none;
@@ -326,7 +295,7 @@
 	background-color: rgb(92, 91, 91);
 	color: white;
 	font-size: 70px;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 
 	text-align: left;
 	text-decoration: none;
@@ -341,7 +310,7 @@
 	flex-direction: column;
 	background-color: grey;
 	opacity: 85%;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: $shadows;
 }
 #formBtn {
 	margin-left: 15em;
@@ -352,7 +321,7 @@
 	border: none;
 	text-decoration: none;
 	background-color: rgb(92, 91, 91);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: $shadows;
 }
 #timerInput {
 	margin-left: 2em;
@@ -360,12 +329,12 @@
 }
 h3 {
 	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 }
 ::placeholder {
 	font-size: larger;
 	font-weight: bold;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 	text-align: center;
 }
 #timerInputBoxs {
@@ -447,5 +416,5 @@ input:checked + .slider:before {
 	color: white;
 
 	font-size: larger;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $fontStyle;
 }
