@@ -41,15 +41,30 @@ function start() {
 		//interval
 		timerInterval = setInterval(() => {
 			if (seconds < 60 && seconds > 0) {
-				// if the length is less then two add a zero in from of value
-				for (let a = seconds.toString.length; a < 2; a++) {
+				// if the length is less then two add a zero
+				for (let a = seconds.toString.length; a < "2"; a++) {
 					outputseconds = "0" + seconds;
+					console.log("a is: " + a);
 
-					for (let b = minutes.toString.length; b < 2; b++) {
+					for (let b = minutes.toString.length; b < "2"; b++) {
 						outputminutes = "0" + minutes;
+						console.log("b is: " + b);
 
-						for (let c = hours.toString.length; c < 2; c++) {
+						for (let c = hours.toString.length; c < "2"; c++) {
 							outputhours = "0" + hours;
+							console.log("c is: " + c);
+						}
+					}
+				}
+				for (let a = seconds.toString.length; a === "0"; a++) {
+					console.log("a is: " + a);
+					outputseconds = 00 + seconds;
+					for (let b = minutes.toString.length; b === "0"; b++) {
+						console.log("b is: " + b);
+						outputminutes = 00 + minutes;
+						for (let c = hours.toString.length; c === "0"; c++) {
+							console.log("c is: " + c);
+							outputhours = 00 + hours;
 						}
 					}
 				}
@@ -81,6 +96,18 @@ function start() {
 						}
 					}
 				}
+				for (let a = seconds.toString.length; a === "0"; a++) {
+					console.log("a is: " + a);
+					outputseconds = 00 + seconds;
+					for (let b = minutes.toString.length; b === "0"; b++) {
+						console.log("b is: " + b);
+						outputminutes = 00 + minutes;
+						for (let c = hours.toString.length; c === "0"; c++) {
+							console.log("c is: " + c);
+							outputhours = 00 + hours;
+						}
+					}
+				}
 				//remove any extra zeros
 				if (outputminutes.length > 2) {
 					outputminutes = outputminutes.replace("0", "");
@@ -102,6 +129,18 @@ function start() {
 
 						for (let c = hours.toString.length; c < "2"; c++) {
 							outputhours = 0 + hours;
+						}
+					}
+				}
+				for (let a = seconds.toString.length; a === "0"; a++) {
+					console.log("a is: " + a);
+					outputseconds = 00 + seconds;
+					for (let b = minutes.toString.length; b === "0"; b++) {
+						console.log("b is: " + b);
+						outputminutes = 00 + minutes;
+						for (let c = hours.toString.length; c === "0"; c++) {
+							console.log("c is: " + c);
+							outputhours = 00 + hours;
 						}
 					}
 				}
