@@ -1,6 +1,6 @@
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
+let seconds;
+let minutes;
+let hours;
 let timerInterval = null;
 let time = [];
 
@@ -41,116 +41,53 @@ function start() {
 		//interval
 		timerInterval = setInterval(() => {
 			if (seconds < 60 && seconds > 0) {
-				// if the length is less then two add a zero
-				for (let a = seconds.toString.length; a < "2"; a++) {
-					outputseconds = "0" + seconds;
-					console.log("a is: " + a);
+				// set value to be printed if > 9
 
-					for (let b = minutes.toString.length; b < "2"; b++) {
-						outputminutes = "0" + minutes;
-						console.log("b is: " + b);
+				outputseconds = seconds;
+				outputminutes = minutes;
+				outputhours = hours;
 
-						for (let c = hours.toString.length; c < "2"; c++) {
-							outputhours = "0" + hours;
-							console.log("c is: " + c);
-						}
-					}
-				}
-				for (let a = seconds.toString.length; a === "0"; a++) {
-					console.log("a is: " + a);
-					outputseconds = 00 + seconds;
-					for (let b = minutes.toString.length; b === "0"; b++) {
-						console.log("b is: " + b);
-						outputminutes = 00 + minutes;
-						for (let c = hours.toString.length; c === "0"; c++) {
-							console.log("c is: " + c);
-							outputhours = 00 + hours;
-						}
-					}
-				}
-				//remove any extra zeros
-				if (outputseconds.length > 2) {
-					outputseconds = outputseconds.replace("0", "");
-					if (outputminutes.length > 2) {
-						outputminutes = outputminutes.replace("0", "");
-					}
-				}
-				//display time and main function of timer
+				//check and see if any are below 9 but greater then 0 to add placeholder
+				placeholder();
+
 				document.getElementById("inputSeconds").innerHTML = outputseconds;
 				document.getElementById("inputMinutes").innerHTML = outputminutes;
+				console.log(
+					"outputminutes: " + outputminutes + "outputhours: " + outputminutes
+				);
 				document.getElementById("inputHours").innerHTML = outputhours;
+
+				//timer function
 				seconds--;
 			} else if (minutes < 60 && minutes > 0) {
-				// if the length is less then two add a zero in from of value
-				for (let a = seconds.toString.length; a < "2"; a++) {
-					console.log("a is: " + a);
-					outputseconds = 0 + seconds;
+				// set value to be printed if > 9
 
-					for (let b = minutes.toString.length; b < "2"; b++) {
-						console.log("b is: " + b);
-						outputminutes = 0 + minutes;
+				outputseconds = seconds;
+				outputminutes = minutes;
+				outputhours = hours;
 
-						for (let c = hours.toString.length; c < "2"; c++) {
-							console.log("c is: " + c);
-							outputhours = 0 + hours;
-						}
-					}
-				}
-				for (let a = seconds.toString.length; a === "0"; a++) {
-					console.log("a is: " + a);
-					outputseconds = 00 + seconds;
-					for (let b = minutes.toString.length; b === "0"; b++) {
-						console.log("b is: " + b);
-						outputminutes = 00 + minutes;
-						for (let c = hours.toString.length; c === "0"; c++) {
-							console.log("c is: " + c);
-							outputhours = 00 + hours;
-						}
-					}
-				}
-				//remove any extra zeros
-				if (outputminutes.length > 2) {
-					outputminutes = outputminutes.replace("0", "");
-				}
+				//check and see if any are below 9 but greater then 0 to add placeholder
+				placeholder();
 
-				//display time and continue main function of timer
 				document.getElementById("inputMinutes").innerHTML = outputminutes;
 				document.getElementById("inputSeconds").innerHTML = outputseconds;
 				document.getElementById("inputHours").innerHTML = outputhours;
+
 				minutes--;
 				seconds = 59;
 			} else if (hours < 60 && hours > 0) {
-				// if the length is less then two add a zero in from of value
-				for (let a = seconds.toString.length; a < "2"; a++) {
-					outputseconds = 0 + seconds;
+				// set value to be printed if > 9
+				outputseconds = seconds;
+				outputminutes = minutes;
+				outputhours = hours;
 
-					for (let b = minutes.toString.length; b < "2"; b++) {
-						outputminutes = 0 + minutes;
+				//check and see if any are below 9 but greater then 0 to add placeholder
+				placeholder();
 
-						for (let c = hours.toString.length; c < "2"; c++) {
-							outputhours = 0 + hours;
-						}
-					}
-				}
-				for (let a = seconds.toString.length; a === "0"; a++) {
-					console.log("a is: " + a);
-					outputseconds = 00 + seconds;
-					for (let b = minutes.toString.length; b === "0"; b++) {
-						console.log("b is: " + b);
-						outputminutes = 00 + minutes;
-						for (let c = hours.toString.length; c === "0"; c++) {
-							console.log("c is: " + c);
-							outputhours = 00 + hours;
-						}
-					}
-				}
-				//display time and continue main function of timer
-				if (outputminutes.length > 2) {
-					outputminutes = outputminutes.replace("0", "");
-				}
 				document.getElementById("inputHours").innerHTML = outputhours;
 				document.getElementById("inputMinutes").innerHTML = outputminutes;
-				document.getElementById("inputSeconds").innerHTML = outputhours;
+				document.getElementById("inputSeconds").innerHTML = outputseconds;
+
 				hours--;
 				minutes = 59;
 			}
@@ -188,3 +125,31 @@ document.getElementById("resetTimer").addEventListener("click", () => {
 	document.getElementById("inputMinutes").innerHTML = startTimer;
 	document.getElementById("inputHours").innerHTML = startTimer;
 }); //end of function
+
+function placeholder() {
+	if (
+		(seconds <= 9 && seconds > 0) ||
+		(minutes <= 9 && minutes > 0) ||
+		(hours <= 9 && hours > 0)
+	) {
+		for (let a = seconds; a <= 9 && a > 0; a++) {
+			outputseconds = "0" + seconds;
+			console.log(
+				"you're in seconds seconds, output seconds is" + outputseconds
+			);
+
+			for (let b = minutes; b <= 9 && b > 0; b++) {
+				outputminutes = "0" + minutes;
+				console.log(
+					"you're in seconds minutes, output minutes is" + outputminutes
+				);
+
+				for (let c = hours; c <= 9 && c > 0; c++) {
+					outputhours = "0" + hours;
+					console.log("you're in seconds hours, output hours" + outputhours);
+				}
+			}
+		}
+	}
+	return outputseconds + outputminutes + outputhours;
+}
