@@ -129,6 +129,7 @@ document.getElementById("resetTimer").addEventListener("click", () => {
 }); //end of function
 
 function placeholder() {
+	//needs to be based on lenght not value
 	if (
 		(seconds <= 9 && seconds > 0) ||
 		(minutes <= 9 && minutes > 0) ||
@@ -170,5 +171,6 @@ function startingValue() {
 			outputhours = "00";
 		}
 	}
+
 	return outputseconds + outputminutes + outputhours;
 }
