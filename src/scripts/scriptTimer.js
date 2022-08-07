@@ -42,13 +42,19 @@ function start() {
 		timerInterval = setInterval(() => {
 			if (seconds < 60 && seconds > 0) {
 				// set value to be printed if > 9
-
-				outputseconds = seconds;
-				outputminutes = minutes;
-				outputhours = hours;
-
+				startingValue();
+				console.log(
+					"current values" + outputhours + outputminutes + outputseconds
+				);
 				//check and see if any are below 9 but greater then 0 to add placeholder
 				placeholder();
+
+				console.log(
+					"current values, about to print..." +
+						outputhours +
+						outputminutes +
+						outputseconds
+				);
 
 				document.getElementById("inputSeconds").innerHTML = outputseconds;
 				document.getElementById("inputMinutes").innerHTML = outputminutes;
@@ -62,9 +68,7 @@ function start() {
 			} else if (minutes < 60 && minutes > 0) {
 				// set value to be printed if > 9
 
-				outputseconds = seconds;
-				outputminutes = minutes;
-				outputhours = hours;
+				startingValue();
 
 				//check and see if any are below 9 but greater then 0 to add placeholder
 				placeholder();
@@ -77,9 +81,7 @@ function start() {
 				seconds = 59;
 			} else if (hours < 60 && hours > 0) {
 				// set value to be printed if > 9
-				outputseconds = seconds;
-				outputminutes = minutes;
-				outputhours = hours;
+				startingValue();
 
 				//check and see if any are below 9 but greater then 0 to add placeholder
 				placeholder();
@@ -132,23 +134,40 @@ function placeholder() {
 		(minutes <= 9 && minutes > 0) ||
 		(hours <= 9 && hours > 0)
 	) {
-		for (let a = seconds; a <= 9 && a > 0; a++) {
+		if (seconds <= 9 && seconds > 0) {
 			outputseconds = "0" + seconds;
 			console.log(
 				"you're in seconds seconds, output seconds is" + outputseconds
 			);
-
-			for (let b = minutes; b <= 9 && b > 0; b++) {
+			if (minutes <= 9 && minutes > 0) {
 				outputminutes = "0" + minutes;
 				console.log(
 					"you're in seconds minutes, output minutes is" + outputminutes
 				);
-
-				for (let c = hours; c <= 9 && c > 0; c++) {
+				if (hours <= 9 && hours > 0) {
 					outputhours = "0" + hours;
 					console.log("you're in seconds hours, output hours" + outputhours);
 				}
 			}
+		}
+	}
+	return outputseconds + outputminutes + outputhours;
+}
+function startingValue() {
+	outputseconds = seconds;
+	console.log("seconds seconds" + outputseconds);
+	outputminutes = minutes;
+	console.log("seconds minutes" + outputminutes);
+	outputhours = hours;
+	console.log("seconds hours" + outputhours);
+
+	if (seconds === "" || minutes === "" || hours === "") {
+		if (seconds === "") {
+			outputseconds = "00";
+		} else if (minutes === "") {
+			outputminutes = "00";
+		} else if (hours === "") {
+			outputhours = "00";
 		}
 	}
 	return outputseconds + outputminutes + outputhours;
